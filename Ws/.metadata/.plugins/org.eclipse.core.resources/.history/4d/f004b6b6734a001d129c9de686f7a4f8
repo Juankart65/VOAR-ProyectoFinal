@@ -1,0 +1,19 @@
+//Source file: D:\\Escritorio\\ProyectoFinal\\Aplicacion.java
+
+package project.model;
+
+
+public class Aplicacion 
+{
+   public Vendedor theVendedor;
+   public Vendedor listaVendedores[];
+   public Administrador theAdministrador;
+   
+   /**
+   @roseuid 5AED5529006E
+    */
+   public Aplicacion() 
+   {
+    
+   }
+}

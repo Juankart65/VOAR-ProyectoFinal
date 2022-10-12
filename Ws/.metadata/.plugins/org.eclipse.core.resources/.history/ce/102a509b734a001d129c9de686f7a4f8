@@ -1,0 +1,16 @@
+//Source file: D:\\Escritorio\\ProyectoFinal\\Administrador.java
+
+package project.model;
+
+
+public class Administrador extends Persona 
+{
+   
+   /**
+   @roseuid 5AED552703D9
+    */
+   public Administrador() 
+   {
+    
+   }
+}

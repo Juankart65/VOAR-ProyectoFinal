@@ -1,0 +1,20 @@
+//Source file: D:\\Escritorio\\ProyectoFinal\\Persona.java
+
+package ProyectoFinal;
+
+
+public abstract class Persona 
+{
+   private String nombre;
+   private String apellidos;
+   private String cedula;
+   private String direccion;
+   
+   /**
+   @roseuid 5AED55260129
+    */
+   public Persona() 
+   {
+    
+   }
+}

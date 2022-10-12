@@ -1,0 +1,19 @@
+//Source file: D:\\Escritorio\\ProyectoFinal\\EstadoProducto.java
+
+package project.model;
+
+
+public abstract class EstadoProducto 
+{
+   private int VENDIDO;
+   private int PUBLICADO;
+   private int CANCELADO;
+   
+   /**
+   @roseuid 5AED552A03AA
+    */
+   public EstadoProducto() 
+   {
+    
+   }
+}
