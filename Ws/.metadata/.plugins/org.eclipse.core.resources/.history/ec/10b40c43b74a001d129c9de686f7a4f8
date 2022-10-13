@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package project.exceptions;
+
+/**
+ * @author Hewlett Packard
+ *
+ */
+public class SaleException extends Exception {
+	// Attribute Declaration
+}

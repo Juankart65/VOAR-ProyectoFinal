@@ -1,0 +1,145 @@
+package project.model;
+
+/**
+ * This class represents a person
+ *
+ * @author Jose Manuel Taborda
+ * @author Juan Esteban Ramirez
+ * @author Juan Esteban Cardona
+ *
+ */
+public abstract class Person {
+
+	// Atribute Declaration
+
+	private String name;
+	private String lastname;
+	private String idCard;
+	private String address;
+
+	/**
+	 * Constructor of the person class
+	 *
+	 * @param nombre
+	 * @param apellidos
+	 * @param cedula
+	 * @param direccion
+	 */
+	public Person(String nombre, String apellidos, String cedula, String direccion) {
+		super();
+		this.name = nombre;
+		this.lastname = apellidos;
+		this.idCard = cedula;
+		this.address = direccion;
+	}
+
+	/**
+	 * Get name
+	 *
+	 * @return
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * Set Name
+	 *
+	 * @param nombre
+	 */
+	public void setName(String nombre) {
+		this.name = nombre;
+	}
+
+	/**
+	 * Get Lastname
+	 *
+	 * @return
+	 */
+	public String getLastname() {
+		return lastname;
+	}
+
+	/**
+	 * Set Lastname
+	 *
+	 * @param apellidos
+	 */
+	public void setLastname(String apellidos) {
+		this.lastname = apellidos;
+	}
+
+	/**
+	 * Get identification card
+	 *
+	 * @return
+	 */
+	public String getIdCard() {
+		return idCard;
+	}
+
+	/**
+	 * Set identification card
+	 *
+	 * @param cedula
+	 */
+	public void setIdCard(String cedula) {
+		this.idCard = cedula;
+	}
+
+	/**
+	 * Get Address
+	 *
+	 * @return
+	 */
+	public String getAddress() {
+		return address;
+	}
+
+	/**
+	 * Set Address
+	 *
+	 * @param direccion
+	 */
+	public void setAddress(String direccion) {
+		this.address = direccion;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((idCard == null) ? 0 : idCard.hashCode());
+		return result;
+	}
+
+	/**
+	 * This method campares if two people are equals
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Person other = (Person) obj;
+		if (idCard == null) {
+			if (other.idCard != null)
+				return false;
+		} else if (!idCard.equals(other.idCard))
+			return false;
+		return true;
+	}
+
+	/**
+	 * This method converts class attributes to string
+	 */
+	@Override
+	public String toString() {
+		return "Persona [nombre=" + name + ", apellidos=" + lastname + ", cedula=" + idCard + ", direccion="
+				+ address + "]";
+	}
+
+}
