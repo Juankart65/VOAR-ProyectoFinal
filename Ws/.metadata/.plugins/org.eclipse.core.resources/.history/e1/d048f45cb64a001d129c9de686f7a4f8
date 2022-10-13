@@ -1,0 +1,9 @@
+package project.exceptions;
+
+public class PurchaseException extends Exception {
+	/**
+	 * This class represents a
+	 *
+	 *Hewlett Packard
+	 */
+}

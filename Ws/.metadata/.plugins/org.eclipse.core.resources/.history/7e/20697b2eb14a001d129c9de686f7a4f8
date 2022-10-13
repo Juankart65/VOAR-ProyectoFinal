@@ -1,0 +1,10 @@
+package project.model;
+
+/**
+ * This class represents a post
+ * @author Hewlett Packard
+ *
+ */
+public class Post {
+
+}

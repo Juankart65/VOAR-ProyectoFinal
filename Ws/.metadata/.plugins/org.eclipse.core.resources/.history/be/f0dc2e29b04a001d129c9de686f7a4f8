@@ -1,0 +1,12 @@
+package project.model;
+
+
+public class Administrator extends Person
+{
+
+	public Administrator(String nombre, String apellidos, String cedula, String direccion) {
+		super(nombre, apellidos, cedula, direccion);
+	}
+
+
+}

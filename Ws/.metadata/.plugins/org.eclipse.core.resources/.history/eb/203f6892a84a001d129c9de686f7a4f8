@@ -1,0 +1,87 @@
+package project.model;
+
+import java.util.ArrayList;
+
+/**
+ * This class represents to salesperson and inherits from the person class
+ *
+ * @author Jose Manuel Taborda
+ * @author Juan Esteban Ramirez
+ * @author Juan Esteban Cardona
+ *
+ */
+public class SalesPerson extends Person {
+
+	// Attribute Declaration
+
+	private Feed feed;
+	private ArrayList<Sale> listaVentas = new ArrayList<Sale>();
+	private ArrayList<Purchase> listaCompras = new ArrayList<Purchase>();
+
+	/**
+	 * Constructor of the salesperson class
+	 *
+	 * @param nombre
+	 * @param apellidos
+	 * @param cedula
+	 * @param direccion
+	 */
+	public SalesPerson(String nombre, String apellidos, String cedula, String direccion) {
+		super(nombre, apellidos, cedula, direccion);
+	}
+
+	/**
+	 * Get Feed
+	 *
+	 * @return
+	 */
+	public Feed getFeed() {
+		return feed;
+	}
+
+	/**
+	 * Set Feed
+	 *
+	 * @param feed
+	 */
+	public void setFeed(Feed feed) {
+		this.feed = feed;
+	}
+
+	/**
+	 * Get the sales list
+	 *
+	 * @return
+	 */
+	public ArrayList<Sale> getListaVentas() {
+		return listaVentas;
+	}
+
+	/**
+	 * Set the sales list
+	 *
+	 * @param listaVentas
+	 */
+	public void setListaVentas(ArrayList<Sale> listaVentas) {
+		this.listaVentas = listaVentas;
+	}
+
+	/**
+	 * get the shopping list
+	 *
+	 * @return
+	 */
+	public ArrayList<Purchase> getListaCompras() {
+		return listaCompras;
+	}
+
+	/**
+	 * Set the shopping list
+	 *
+	 * @param listaCompras
+	 */
+	public void setListaCompras(ArrayList<Purchase> listaCompras) {
+		this.listaCompras = listaCompras;
+	}
+
+}
