@@ -1,0 +1,41 @@
+package project.model;
+
+import java.util.ArrayList;
+
+/**
+ * This class represents a sale
+ *
+ * @author Jose Manuel Taborda
+ * @author Juan Esteban Ramirez
+ * @author Juan Esteban Cardona
+ *
+ */
+public class Sale {
+
+	// Declaration of attributes
+	private ArrayList<Product> product = new ArrayList<Product>();
+	private PurchaseDetail purchaseDetail;
+	private double total;
+	private String code;
+	private SalesPerson salesPerson;
+
+	// Getters and setters
+	
+
+	// Method constructor
+	public Venta(ArrayList<Producto> producto, DetalleCompra detallCompra, double total, String codigo,
+					Vendedor vendedor) {
+				super();
+				this.producto = producto;
+				this.detallCompra = detallCompra;
+				this.total = total;
+				this.codigo = codigo;
+				this.vendedor = vendedor;
+			}
+
+	// Method toString
+	public String toString() {
+		return "Compra [codigo=" + codigo + "]";
+	}
+
+}
