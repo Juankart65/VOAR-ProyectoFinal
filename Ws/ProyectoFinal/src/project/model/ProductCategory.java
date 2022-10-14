@@ -8,7 +8,7 @@ package project.model;
  * @author Juan Esteban Cardona
  *
  */
-public enum ProductCategory
-{
-
+public enum ProductCategory{
+	
+	KITCHEN, TECHNOLOGY, CLEANLINESS, APPLIANCES, FASHION, SEXSHOP, SPORTS, STATIONERY, HEALTH,
 }
