@@ -1,0 +1,75 @@
+package project.model;
+
+import java.util.ArrayList;
+
+/**
+ * This is the main class
+ *
+ * @author Jose Manuel Taborda
+ * @author Juan Esteban Ramirez
+ * @author Juan Esteban Cardona
+ *
+ */
+public class Aplication {
+
+	private ArrayList<SalesPerson> salesPersonList = new ArrayList<SalesPerson>();
+	private Administrator administrator;
+
+	/**
+	 * Construct of the Aplication class
+	 *
+	 * @param salesPersonList
+	 * @param administrator
+	 */
+	public Aplication(ArrayList<SalesPerson> salesPersonList, Administrator administrator) {
+		super();
+		this.salesPersonList = salesPersonList;
+		this.administrator = administrator;
+	}
+
+	/**
+	 * Get salesPersonList
+	 *
+	 * @return the salesPersonList
+	 */
+	public ArrayList<SalesPerson> getSalesPersonList() {
+		return salesPersonList;
+	}
+
+	/**
+	 * Set salesPersonList
+	 *
+	 * @param salesPersonList the salesPersonList to set
+	 */
+	public void setSalesPersonList(ArrayList<SalesPerson> salesPersonList) {
+		this.salesPersonList = salesPersonList;
+	}
+
+	/**
+	 * Get administrator
+	 *
+	 * @return the administrator
+	 */
+	public Administrator getAdministrator() {
+		return administrator;
+	}
+
+	/**
+	 * Set administrator
+	 *
+	 * @param administrator the administrator to set
+	 */
+	public void setAdministrator(Administrator administrator) {
+		this.administrator = administrator;
+	}
+
+	/**
+	 * @param search
+	 */
+	public SalesPerson searchUser(String search) {
+		SalesPerson user = null;
+		return user;
+	}
+
+
+}
