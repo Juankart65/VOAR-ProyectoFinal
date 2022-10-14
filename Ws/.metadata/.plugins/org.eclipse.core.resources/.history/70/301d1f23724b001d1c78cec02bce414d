@@ -26,12 +26,11 @@ public class Post {
 	 * @param product
 	 * @param reactionList
 	 */
-	public Post(String description, Product product, ArrayList<Reaction> reactionList, String id) {
+	public Post(String description, Product product, ArrayList<Reaction> reactionList) {
 		super();
 		this.description = description;
 		this.product = product;
 		this.reactionList = reactionList;
-		this.id = id;
 	}
 
 	/**

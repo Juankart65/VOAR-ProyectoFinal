@@ -17,7 +17,6 @@ public class Post {
 	private String description;
 	private Product product;
 	private ArrayList<Reaction> reactionList = new ArrayList<Reaction>();
-	private String id;
 
 	/**
 	 * Construct of the post class
@@ -26,12 +25,11 @@ public class Post {
 	 * @param product
 	 * @param reactionList
 	 */
-	public Post(String description, Product product, ArrayList<Reaction> reactionList, String id) {
+	public Post(String description, Product product, ArrayList<Reaction> reactionList) {
 		super();
 		this.description = description;
 		this.product = product;
 		this.reactionList = reactionList;
-		this.id = id;
 	}
 
 	/**
@@ -41,14 +39,6 @@ public class Post {
 	 */
 	public String getDescription() {
 		return description;
-	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
 	}
 
 	/**
