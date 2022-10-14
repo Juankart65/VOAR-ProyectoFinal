@@ -2,6 +2,8 @@ package project.model;
 
 import java.util.ArrayList;
 
+import project.exceptions.PersonException;
+
 /**
  * This is the main class
  *
@@ -81,8 +83,123 @@ public class Aplication {
 	public void setUserAct(SalesPerson userAct) {
 		this.userAct = userAct;
 	}
+	
+	//CRUD SALESPERSON
+	
+	/**
+	 * this method create a salesPerson 
+	 * @param newSalesPerson
+	 * @return
+	 */
+	public String createSalesPerson(SalesPerson newSalesPerson) {
+		String message = "";
+		boolean checkSalesPerson;
+		try {
+			checkSalesPerson = checkPerson(newSalesPerson.getIdCard());
+			if(checkSalesPerson == false) {
+				salesPersonList.add(newSalesPerson);
+				message = "salesPerson created successfull";
+			}
+		} catch (PersonException e) {
+				message = e.getMessage();
+		}
+		return message;
+	}
 
+	/** this method ckeck if salesPerson exist
+	 * @param idCard
+	 * @return
+	 */
+	private boolean checkPerson(String idCard) throws PersonException{
+		boolean check = false;
+		boolean flag  =false;
+		for (SalesPerson salesPerson : salesPersonList) {
+			if(flag ==false && salesPerson.getIdCard().equals(idCard)) {
+				check = true;
+				flag = true;
+				throw new PersonException("salesPerson exist");
+			}
+		}
+		return check;
+	}
+	
+	/**
+	 * this method get a salesPerson by name
+	 * @param name
+	 * @return
+	 * @throws PersonException
+	 */
+	public SalesPerson getSalesPerson(String name) throws PersonException {
+		SalesPerson salesPersonFound = null;
+		boolean flag = false;
+		for (SalesPerson salesPerson : salesPersonList) {
+			if(salesPerson != null && flag == false && salesPerson.getName().equals(name)) {
+				salesPersonFound =salesPerson;
+				flag = true;
+			}
+		}
+		if(salesPersonFound == null) {
+			throw new PersonException("salesPerson no found");
+		}
+		
+		return salesPersonFound;
+	}
+	
+	/**
+	 * this mthod update a salesPerson
+	 * @param newSalesPerson
+	 * @return
+	 * @throws PersonException 
+	 */
+	public String updateSalesPerson(SalesPerson newSalesPerson) throws PersonException {
+		String message ="";
+		SalesPerson salesPersonFound  = null;
+		boolean flag = false;
+		for (SalesPerson salesPerson : salesPersonList) {
+			if(flag == false && salesPerson.getIdCard().equals(newSalesPerson.getIdCard())) {
+				salesPersonFound = salesPerson;
+				flag = true;
+				
+				salesPersonFound.setAddress(newSalesPerson.getAddress());
+				salesPersonFound.setIdCard(newSalesPerson.getIdCard());
+				salesPersonFound.setLastname(newSalesPerson.getLastname());;
+				salesPersonFound.setName(newSalesPerson.getName());
 
-
-
+				message = "salesPerson updated successfully";
+			}
+		}
+		if(salesPersonFound == null) {
+			throw new PersonException("SalesPerson don´t exist");
+		}
+		return message;
+	}
+	
+	
+	/**
+	 * this method delete a salesPerson by idCard
+	 * @param idCard
+	 * @return
+	 */
+	public String deleteSalesPerson(String idCard) {
+		
+		String message  = "";
+		SalesPerson salesPersonFound = null;
+		boolean flag  = false;
+		
+		try {
+			salesPersonFound = getSalesPerson(idCard);
+			for (SalesPerson salesPerson : salesPersonList) {
+				if(salesPerson != null && flag == false && salesPerson == salesPersonFound) {
+					salesPerson = null;
+					flag = true;
+					message = "salesPerson deleted successfully";
+				}
+			}
+		} catch (PersonException e) {
+			message = e.getMessage();
+		}
+		
+		return message;
+	}
+	
 }

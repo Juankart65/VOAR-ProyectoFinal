@@ -42,14 +42,6 @@ public class SalesPerson extends Person implements FriendRequest {
 		return profile;
 	}
 
-	public Aplication getApp() {
-		return app;
-	}
-
-	public void setApp(Aplication app) {
-		this.app = app;
-	}
-
 	/**
 	 * Set salesperson profile
 	 *
@@ -131,7 +123,5 @@ public class SalesPerson extends Person implements FriendRequest {
 		// TODO Auto-generated method stub
 
 	}
-	
-	//-----------------------End Friend Request Methods-------------------------------------
 
 }

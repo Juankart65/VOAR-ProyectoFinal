@@ -66,15 +66,8 @@ public class Profile {
 		return message;
 	}
 	
-	
-	/**
-	 * this method get a post by id
-	 * @param id
-	 * @return
-	 * @throws PostException
-	 */
 	public Post getPost(String id ) throws PostException {
-		Post  postFound = null;
+		Post  postFound= null;
 		boolean flag = false;
 		
 		for (Post post : postList) {
@@ -85,58 +78,10 @@ public class Profile {
 		}
 		if(postFound == null) {
 			throw new PostException("post don´t exist"); 
+			
 		}
 		return postFound;
 		
-	}
-	
-	/**
-	 * this method update a post 
-	 * @param newPost
-	 * @return
-	 * @throws PostException
-	 */
-	public String updatePost(Post newPost) throws PostException {
-		
-		String message = "";
-		Post postFound = null;
-		boolean flag = false;
-		
-		for (Post post : postList) {
-			if (!flag  && post.getId().equals(newPost.getId())) {
-				
-				postFound = post;
-				flag = true;
-				postFound.setDescription(newPost.getDescription());
-				postFound.setId(newPost.getId());
-				postFound.setProduct(newPost.getProduct());
-				
-				message = "update is successfull"; 
-			}
-		}
-		if(postFound == null) {
-			throw new PostException("post don´t exist");
-		}
-		return message;
-	}
-	
-	public String delatePost(String id) {
-		Post postFound = null;
-		String message= "";
-		boolean flag = false;
-		try {
-			postFound = getPost(id);
-			for (Post post : postList) {
-				if (flag== false && post!= null && post== postFound) {
-					post  = null;
-					message = "deleted post";
-					flag= true;
-				}
-			}
-		} catch (PostException e) {
-			message = e.getMessage();
-		}
-		return message;
 	}
 
 }
