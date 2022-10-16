@@ -2,8 +2,6 @@ package project.model;
 
 import java.util.ArrayList;
 
-import javax.swing.JOptionPane;
-
 /**
  * This class represents a salesperson and inherits from the person class
  *
@@ -17,7 +15,7 @@ public class SalesPerson extends Person implements FriendRequest {
 	// Attribute Declaration
 
 	private Profile profile;
-	private Aplication app;
+	private Application app;
 	private ArrayList<Sale> salesList = new ArrayList<Sale>();
 	private ArrayList<Purchase> shoppingList = new ArrayList<Purchase>();
 
@@ -42,11 +40,11 @@ public class SalesPerson extends Person implements FriendRequest {
 		return profile;
 	}
 
-	public Aplication getApp() {
+	public Application getApp() {
 		return app;
 	}
 
-	public void setApp(Aplication app) {
+	public void setApp(Application app) {
 		this.app = app;
 	}
 
@@ -102,13 +100,7 @@ public class SalesPerson extends Person implements FriendRequest {
 	 */
 	@Override
 	public void sendFriendRequest() {
-		String search = "";
 
-		try {
-
-		} catch (Exception e) {
-
-		}
 	}
 
 
@@ -131,7 +123,7 @@ public class SalesPerson extends Person implements FriendRequest {
 		// TODO Auto-generated method stub
 
 	}
-	
+
 	//-----------------------End Friend Request Methods-------------------------------------
 
 }
