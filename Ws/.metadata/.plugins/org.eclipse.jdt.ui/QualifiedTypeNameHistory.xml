@@ -7,12 +7,14 @@
 <fullyQualifiedTypeName name="project.model.SalesPerson"/>
 <fullyQualifiedTypeName name="org.junit.internal.runners.statements.Fail"/>
 <fullyQualifiedTypeName name="org.junit.Assert"/>
-<fullyQualifiedTypeName name="javafx.application.Application"/>
 <fullyQualifiedTypeName name="co.edu.uniquindio.finalproject.model.App"/>
-<fullyQualifiedTypeName name="javafx.fxml.FXMLLoader"/>
 <fullyQualifiedTypeName name="javafx.scene.layout.AnchorPane"/>
 <fullyQualifiedTypeName name="co.edu.uniquindio.finalproject.controllers.AppVentanaPrincipalController"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="javafx.scene.Scene"/>
 <fullyQualifiedTypeName name="co.edu.uniquindio.finalproject.application.ApplicationProject"/>
+<fullyQualifiedTypeName name="javafx.event.ActionEvent"/>
+<fullyQualifiedTypeName name="co.edu.uniquindio.finalproject.application.Aplicacion"/>
+<fullyQualifiedTypeName name="javafx.application.Application"/>
+<fullyQualifiedTypeName name="javafx.fxml.FXMLLoader"/>
 </qualifiedTypeNameHistroy>
