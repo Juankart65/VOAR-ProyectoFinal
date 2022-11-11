@@ -1,5 +1,0 @@
-package project.exceptions;
-
-public class AdministratorException extends Exception {
-
-}
