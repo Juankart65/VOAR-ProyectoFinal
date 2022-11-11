@@ -1,0 +1,16 @@
+/**
+ * This class belongs to the package co.edu.uniquindio.finalproject.application
+ */
+package co.edu.uniquindio.finalproject.application;
+
+import javafx.application.*;
+
+/**
+ * This class represents to
+ *
+ * @author Juanes Cardona
+ */
+public class ApplicationProject extends Application {
+
+	// Attribute Declaration
+}

@@ -1,5 +1,0 @@
-package project.exceptions;
-
-public class ProductException extends Exception {
-
-}

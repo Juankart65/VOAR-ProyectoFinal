@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="">
+   <children>
+      <TabPane layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab fx:id="tabPost" text="Post">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ScrollPane layoutX="292.0" prefHeight="471.0" prefWidth="310.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="292.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <SplitPane dividerPositions="0.5031982942430704" orientation="VERTICAL" prefHeight="471.0" prefWidth="306.0" AnchorPane.bottomAnchor="-271.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-106.0" AnchorPane.topAnchor="0.0">
+                                      <items>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" />
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="231.0" prefWidth="363.0" />
+                                      </items>
+                                    </SplitPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </ScrollPane>
+                        <Pane fx:id="paneInformacionProducto" prefHeight="471.0" prefWidth="291.0">
+                           <children>
+                              <Label layoutX="40.0" layoutY="47.0" text="Nombre Producto" textFill="#1010c6">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="40.0" layoutY="108.0" text="Categoría" textFill="#1010c6">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="40.0" layoutY="167.0" text="Precio" textFill="#1010c6">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtCategoria" layoutX="120.0" layoutY="127.0" />
+                              <TextField fx:id="txtPrecio" layoutX="120.0" layoutY="186.0" />
+                              <Button fx:id="bttCrearPublicación" layoutX="25.0" layoutY="315.0" mnemonicParsing="false" onAction="#CrearPublicacionEvent" text="Crear Publicación">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="bttComprar" layoutX="175.0" layoutY="315.0" mnemonicParsing="false" onAction="#ComprarProductoEvent" text="Comprar" />
+                           </children>
+                        </Pane>
+                        <TextField fx:id="txtNombreProducto" layoutX="120.0" layoutY="71.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="tabUser" text="User">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.8340425531914893" layoutY="-2.0" orientation="VERTICAL" prefHeight="472.0" prefWidth="600.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <Label layoutX="38.0" layoutY="31.0" text="Nombre" textFill="#5c10dd" />
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="195.0" prefWidth="598.0" />
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="tabFriendRequest" text="FriendRequest">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+            <Tab fx:id="tabOther" text="Other">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
