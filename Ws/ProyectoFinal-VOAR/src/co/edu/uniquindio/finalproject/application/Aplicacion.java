@@ -5,9 +5,13 @@ package co.edu.uniquindio.finalproject.application;
 
 import java.io.IOException;
 
+import co.edu.uniquindio.finalproject.controllers.CrearPostController;
+import co.edu.uniquindio.finalproject.controllers.InicioSesionController;
 import co.edu.uniquindio.finalproject.controllers.VentanaPrincipalController;
 import co.edu.uniquindio.finalproject.model.App;
 import javafx.application.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -22,7 +26,7 @@ public class Aplicacion extends Application {
 
 	// Attribute Declaration
 	private Stage primaryStage;
-	App app = new App("V.O.A.R");
+	private App app;
 
 	/*
 	 * (non-Javadoc)
@@ -33,14 +37,14 @@ public class Aplicacion extends Application {
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("V:O:A:R");
-		mostrarVentanaPrincipal();
+		mostrarVentanaInicioSesion();
 
 	}
 
 	/**
 	 *
 	 */
-	private void mostrarVentanaPrincipal() {
+	public void mostrarVentanaPrincipal() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(Aplicacion.class.getResource("../views/VentanaPrincipalView.fxml"));
@@ -49,6 +53,51 @@ public class Aplicacion extends Application {
 
 			VentanaPrincipalController ventanaPrincipalController = loader.getController();
 			ventanaPrincipalController.setAplicacion(this);
+
+			Scene scene = new Scene(rootLayout);
+			primaryStage.setScene(scene);
+			primaryStage.show();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 *
+	 */
+	public void mostrarVentanaInicioSesion() {
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(Aplicacion.class.getResource("../views/InicioSesionView.fxml"));
+
+			AnchorPane rootLayout = (AnchorPane) loader.load();
+
+			InicioSesionController inicioSesionController = loader.getController();
+			inicioSesionController.setAplicacion(this);
+
+			Scene scene = new Scene(rootLayout);
+			primaryStage.setScene(scene);
+			primaryStage.show();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 *
+	 */
+	public void mostrarVentanaCrearPost() {
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(Aplicacion.class.getResource("../views/CrearPost.fxml"));
+
+			AnchorPane rootLayout = (AnchorPane) loader.load();
+
+			CrearPostController crearPostController = loader.getController();
+			crearPostController.setAplicacion(this);
+
 
 			Scene scene = new Scene(rootLayout);
 			primaryStage.setScene(scene);

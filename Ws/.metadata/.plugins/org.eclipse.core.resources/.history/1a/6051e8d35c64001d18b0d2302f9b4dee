@@ -1,0 +1,32 @@
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
+
+public class CrearPostController {
+
+    @FXML
+    private ResourceBundle resources;
+
+    @FXML
+    private URL location;
+
+    @FXML
+    private Button btnPublish;
+
+    @FXML
+    private TextField txtPrecioProducto;
+
+    @FXML
+    private Button btnImagen;
+
+    @FXML
+    private ComboBox<?> boxCategory;
+
+
+    @FXML
+    void initialize() {
+    }
+}
