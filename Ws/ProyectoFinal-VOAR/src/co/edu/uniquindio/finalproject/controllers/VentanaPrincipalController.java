@@ -44,10 +44,14 @@ public class VentanaPrincipalController {
     private Tab tabUser;
 
     @FXML
-    private Button bttCrearPublicación;
+    private Button btnCrearPublicación;
 
     @FXML
-    private Button bttComprar;
+    private Button btnComprar;
+
+    @FXML
+    private Button btnCerrarSesion;
+
 
     @FXML
     private TextField txtNombreProducto;
@@ -57,16 +61,37 @@ public class VentanaPrincipalController {
 
     @FXML
     void CrearPublicacionEvent(ActionEvent event) {
-
+    	crearPostAction();
     }
 
-    @FXML
+    /**
+	 *
+	 */
+	private void crearPostAction() {
+		aplicacion.mostrarVentanaCrearPost();
+
+	}
+
+	@FXML
     void ComprarProductoEvent(ActionEvent event) {
 
     }
 
-
     @FXML
+    void CerrarSesionEvent(ActionEvent event) {
+    	cerrarSesionAction();
+    }
+
+
+    /**
+	 *
+	 */
+	private void cerrarSesionAction() {
+		aplicacion.mostrarVentanaInicioSesion();
+
+	}
+
+	@FXML
     void initialize() {
 
     }

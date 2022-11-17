@@ -18,16 +18,7 @@
                      <children>
                         <ScrollPane layoutX="292.0" prefHeight="471.0" prefWidth="310.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="292.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0">
                           <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
-                                 <children>
-                                    <SplitPane dividerPositions="0.5031982942430704" orientation="VERTICAL" prefHeight="471.0" prefWidth="306.0" AnchorPane.bottomAnchor="-271.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-106.0" AnchorPane.topAnchor="0.0">
-                                      <items>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" />
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="231.0" prefWidth="363.0" />
-                                      </items>
-                                    </SplitPane>
-                                 </children>
-                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
                           </content>
                         </ScrollPane>
                         <Pane fx:id="paneInformacionProducto" prefHeight="471.0" prefWidth="291.0">
@@ -49,12 +40,12 @@
                               </Label>
                               <TextField fx:id="txtCategoria" layoutX="120.0" layoutY="127.0" />
                               <TextField fx:id="txtPrecio" layoutX="120.0" layoutY="186.0" />
-                              <Button fx:id="bttCrearPublicación" layoutX="25.0" layoutY="315.0" mnemonicParsing="false" onAction="#CrearPublicacionEvent" text="Crear Publicación">
+                              <Button fx:id="btnCrearPublicación" layoutX="25.0" layoutY="315.0" mnemonicParsing="false" onAction="#CrearPublicacionEvent" text="Crear Publicación">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </Button>
-                              <Button fx:id="bttComprar" layoutX="175.0" layoutY="315.0" mnemonicParsing="false" onAction="#ComprarProductoEvent" text="Comprar" />
+                              <Button fx:id="btnComprar" layoutX="175.0" layoutY="315.0" mnemonicParsing="false" onAction="#ComprarProductoEvent" text="Comprar" />
                            </children>
                         </Pane>
                         <TextField fx:id="txtNombreProducto" layoutX="120.0" layoutY="71.0" />
@@ -85,9 +76,18 @@
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                </content>
             </Tab>
-            <Tab fx:id="tabOther" text="Other">
+            <Tab fx:id="tabOther" text="Chat">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+            <Tab fx:id="tabOther1" text="Other">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btnCerrarSesion" layoutX="274.0" layoutY="223.0" mnemonicParsing="false" onAction="#CerrarSesionEvent" text="Cerrar Sesión" />
+                     </children>
+                  </AnchorPane>
                </content>
             </Tab>
         </tabs>
