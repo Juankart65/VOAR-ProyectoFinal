@@ -1,7 +1,0 @@
-package project.model;
-
-
-public enum ProductStatus
-{
-   VENDIDO, PUBLICADO, CANCELADO;
-}
