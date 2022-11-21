@@ -1,0 +1,10 @@
+
+
+
+
+
+.search-box{
+	-fx-backgroundcolor: #FFFFFF;
+	-fx-backgroundradius: 100;
+}
+

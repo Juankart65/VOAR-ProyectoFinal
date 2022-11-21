@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.finalproject.controllers.VentanaPrincipalController">
+<AnchorPane prefHeight="485.0" prefWidth="524.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.finalproject.controllers.VentanaPrincipalController">
    <children>
-      <TabPane layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <TabPane prefHeight="200.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
           <Tab fx:id="tabPost" text="Post">
             <content>
@@ -22,8 +30,8 @@
                                  <children>
                                     <SplitPane dividerPositions="0.5031982942430704" orientation="VERTICAL" prefHeight="471.0" prefWidth="306.0" AnchorPane.bottomAnchor="-271.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-106.0" AnchorPane.topAnchor="0.0">
                                       <items>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" />
                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="231.0" prefWidth="363.0" />
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" />
                                       </items>
                                     </SplitPane>
                                  </children>
@@ -55,6 +63,12 @@
                                  </cursor>
                               </Button>
                               <Button fx:id="bttComprar" layoutX="175.0" layoutY="315.0" mnemonicParsing="false" onAction="#ComprarProductoEvent" text="Comprar" />
+                              <Button fx:id="btnImg" layoutX="150.0" layoutY="233.0" mnemonicParsing="false" onAction="#seleccionarImagenEvent" text="Img" />
+                              <Label layoutX="47.0" layoutY="236.0" text="Imagen" textFill="#1010c6">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </Pane>
                         <TextField fx:id="txtNombreProducto" layoutX="120.0" layoutY="71.0" />
@@ -62,7 +76,7 @@
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab fx:id="tabUser" text="User">
+          <Tab fx:id="b" text="Home">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -70,7 +84,27 @@
                           <items>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                  <children>
-                                    <Label layoutX="38.0" layoutY="31.0" text="Nombre" textFill="#5c10dd" />
+                                    <Label layoutX="67.0" layoutY="23.0" prefHeight="55.0" prefWidth="497.0" text="Bienvenido a V.O.A.R" textFill="#284561">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font></Label>
+                                    <TableView layoutX="67.0" layoutY="183.0" prefHeight="172.0" prefWidth="389.0">
+                                      <columns>
+                                        <TableColumn prefWidth="75.0" text="C1" />
+                                        <TableColumn prefWidth="75.0" text="C2" />
+                                      </columns>
+                                    </TableView>
+                                    <TextField layoutX="114.0" layoutY="81.0" prefHeight="24.0" prefWidth="295.0" />
+                                    <ImageView fitHeight="31.0" fitWidth="33.0" layoutX="67.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../../../../../../../../Downloads/WhatsApp%20Image%202022-11-21%20at%206.32.05%20PM.jpeg" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="69.0" layoutY="148.0" text="Productos">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
                                  </children>
                               </AnchorPane>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="195.0" prefWidth="598.0" />
@@ -80,15 +114,16 @@
                   </AnchorPane>
             </content>
           </Tab>
-            <Tab fx:id="tabFriendRequest" text="FriendRequest">
+            <Tab fx:id="tabFriendRequest" text="Amigos" />
+            <Tab fx:id="tabOther" text="Mensajes">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                </content>
             </Tab>
-            <Tab fx:id="tabOther" text="Other">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-               </content>
+            <Tab text="Untitled Tab">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
             </Tab>
         </tabs>
       </TabPane>

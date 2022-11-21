@@ -1,0 +1,14 @@
+/**
+ * This class belongs to the package co.edu.uniquindio.finalproject.controllers
+ */
+package co.edu.uniquindio.finalproject.controllers;
+
+/**
+ * This class represents to
+ *
+ * @author Juanes Cardona
+ */
+public class WallController {
+
+	// Attribute Declaration
+}

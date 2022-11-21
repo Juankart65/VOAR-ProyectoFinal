@@ -5,8 +5,10 @@ package co.edu.uniquindio.finalproject.application;
 
 import java.io.IOException;
 
+import co.edu.uniquindio.finalproject.controllers.InicioSesionController;
 import co.edu.uniquindio.finalproject.controllers.VentanaPrincipalController;
 import co.edu.uniquindio.finalproject.model.App;
+import co.edu.uniquindio.finalproject.model.SalesPerson;
 import javafx.application.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -33,14 +35,24 @@ public class Aplicacion extends Application {
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("V:O:A:R");
-		mostrarVentanaPrincipal();
+		mostrarVentanaInicioSesion();
+		
+		
 
+	}
+
+	public Stage getPrimaryStage() {
+		return primaryStage;
+	}
+
+	public void setPrimaryStage(Stage primaryStage) {
+		this.primaryStage = primaryStage;
 	}
 
 	/**
 	 *
 	 */
-	private void mostrarVentanaPrincipal() {
+	public void mostrarVentanaPrincipal() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(Aplicacion.class.getResource("../views/VentanaPrincipalView.fxml"));
@@ -58,9 +70,71 @@ public class Aplicacion extends Application {
 			e.printStackTrace();
 		}
 	}
+	
+	
+	
+	
+	public void mostrarVentanaInicioSesion() {
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(Aplicacion.class.getResource("../views/InicioSesion.fxml"));
+
+			AnchorPane rootLayout = (AnchorPane)loader.load();
+
+			InicioSesionController inicioSesionController = loader.getController();
+			inicioSesionController.setAplicacion(this);
+
+			Scene scene = new Scene(rootLayout);
+			primaryStage.setScene(scene);
+			primaryStage.show();
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 
 	public static void main(String[] args) {
 		launch(args);
+		
+		
 	}
+	
+	public boolean verificarUsuario(String usuario, String contrasenia) {
+
+		return app.verificarUsuario(usuario,contrasenia);
+	}
+	
+	
+	public SalesPerson crearSalesPeron(SalesPerson newSalesPerson) {
+		
+		return app.createSalesPerson(newSalesPerson);
+		
+	}
+
+	/**
+	 * 
+	 */
+	public void mostrarVentanaRegistro() {
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(Aplicacion.class.getResource("../views/Formulario.fxml"));
+
+			AnchorPane rootLayout = (AnchorPane)loader.load();
+
+			InicioSesionController inicioSesionController = loader.getController();
+			inicioSesionController.setAplicacion(this);
+
+			Scene scene = new Scene(rootLayout);
+			primaryStage.setScene(scene);
+			primaryStage.show();
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 
 }

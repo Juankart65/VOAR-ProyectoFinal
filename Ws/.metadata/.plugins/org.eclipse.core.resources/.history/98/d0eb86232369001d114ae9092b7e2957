@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane prefHeight="810.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <VBox prefHeight="200.0" prefWidth="435.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="110.0">
+                     <children>
+                        <Label prefHeight="58.0" prefWidth="163.0" text="V.O.A.R" textFill="#0c2b26">
+                           <font>
+                              <Font name="System Bold Italic" size="40.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox id="search-box" alignment="CENTER" prefHeight="65.0" prefWidth="200.0" styleClass="search-box">
+                     <opaqueInsets>
+                        <Insets left="30.0" right="30.0" />
+                     </opaqueInsets>
+                     <children>
+                        <TextField minHeight="35.0" prefWidth="245.0" promptText="look for a product" styleClass="transparent" stylesheets="@../styles/Styles.css">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Button minHeight="30.0" mnemonicParsing="false" prefWidth="80.0" styleClass="search-button" stylesheets="@../styles/Styles.css" text="Search" textFill="WHITE" />
+                     </children>
+                     <stylesheets>
+                        <URL value="@../styles/Styles.css" />
+                        <URL value="@../styles/Styles.css" />
+                     </stylesheets>
+                  </HBox>
+               </children>
+            </VBox>
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>

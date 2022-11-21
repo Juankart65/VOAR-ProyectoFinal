@@ -15,6 +15,7 @@ public class SalesPerson extends Person implements FriendRequest {
 	// Attribute Declaration
 
 	private Profile profile;
+	private User user;
 	private App app;
 	private ArrayList<Sale> salesList = new ArrayList<Sale>();
 	private ArrayList<Purchase> shoppingList = new ArrayList<Purchase>();
@@ -27,8 +28,9 @@ public class SalesPerson extends Person implements FriendRequest {
 	 * @param cedula
 	 * @param direccion
 	 */
-	public SalesPerson(String nombre, String apellidos, String cedula, String direccion) {
-		super(nombre, apellidos, cedula, direccion);
+	public SalesPerson(String nombre, String apellidos, String cedula, String direccion,  User user) {
+		super(direccion, direccion, direccion, direccion, direccion);
+		this.user = user;
 	}
 
 	/**
@@ -38,6 +40,14 @@ public class SalesPerson extends Person implements FriendRequest {
 	 */
 	public Profile getProfile() {
 		return profile;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public App getApp() {
@@ -123,7 +133,20 @@ public class SalesPerson extends Person implements FriendRequest {
 		// TODO Auto-generated method stub
 
 	}
+	
+	
+
+	
+
+	public SalesPerson() {super();}
 
 	//-----------------------End Friend Request Methods-------------------------------------
+	
+	public boolean verificarUsuario(String usuario, String contrasenia) {
 
+		if(user.getNombreUsuario().equals(usuario) && user.getContrasenia().equals(contrasenia)){
+			return true;
+		}
+		return false;
+	}
 }

@@ -1,0 +1,14 @@
+/**
+ * This class belongs to the package co.edu.uniquindio.finalproject.model
+ */
+package co.edu.uniquindio.finalproject.model;
+
+/**
+ * This class represents to
+ *
+ * @author Juanes Cardona
+ */
+public class User {
+
+	// Attribute Declaration
+}

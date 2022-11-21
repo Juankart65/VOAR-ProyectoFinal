@@ -20,7 +20,7 @@ public class Administrator extends Person
 	 * @param address
 	 */
 	public Administrator(String name, String lastname, String idCard, String address) {
-		super(name, lastname, idCard, address);
+		super(name, lastname, idCard, address, address);
 	}
 
 }

@@ -29,6 +29,26 @@ public class App {
 		this.salesPersonList = salesPersonList;
 		this.administrator = administrator;
 		this.userAct = userAct;
+		
+		inicializarDatos();
+		
+	}
+	
+	
+	
+	private void inicializarDatos() {
+		
+		SalesPerson salesPerson = new SalesPerson();
+		salesPerson.setName("juan");
+		salesPerson.setLastname("juan ramirez");
+		salesPerson.setIdCard("1005091937");
+		salesPersonList.add(salesPerson);
+		
+		
+		
+		User user = new User("1234", "juan");
+		salesPerson.setUser(user);
+		
 	}
 
 	/**
@@ -124,7 +144,7 @@ public class App {
 	 * @param newSalesPerson
 	 * @return
 	 */
-	public String createSalesPerson(SalesPerson newSalesPerson) {
+	public SalesPerson createSalesPerson(SalesPerson newSalesPerson) {
 		String message = "";
 		boolean checkSalesPerson;
 		try {
@@ -136,7 +156,7 @@ public class App {
 		} catch (PersonException e) {
 			message = e.getMessage();
 		}
-		return message;
+		return newSalesPerson;
 	}
 
 	/**
@@ -239,5 +259,18 @@ public class App {
 
 		return message;
 	}
+	
+	public boolean verificarUsuario(String usuario, String contrasenia) {
+
+		for (SalesPerson salesPerson : salesPersonList) {
+			if(salesPerson.verificarUsuario(usuario,contrasenia)){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	
+	
 
 }

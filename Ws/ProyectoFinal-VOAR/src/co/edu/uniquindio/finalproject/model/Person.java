@@ -19,19 +19,26 @@ public abstract class Person {
 
 	/**
 	 * Constructor of the person class
-	 *
-	 * @param name
-	 * @param lastname
-	 * @param idCard
-	 * @param address
 	 */
-	public Person(String name, String lastname, String idCard, String address) {
+	public Person(String name, String lastname, String lastame,String  idCard, String address) {
 		super();
 		this.name = name;
 		this.lastname = lastname;
 		this.idCard = idCard;
 		this.address = address;
 	}
+	
+	
+
+	/**
+	 * 
+	 */
+	
+
+	public Person() {
+	}
+
+
 
 	/**
 	 * Get the name of the person
@@ -41,6 +48,8 @@ public abstract class Person {
 	public String getName() {
 		return name;
 	}
+
+	
 
 	/**
 	 * Set the name of the person
