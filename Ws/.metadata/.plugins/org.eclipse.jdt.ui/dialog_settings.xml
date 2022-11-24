@@ -12,7 +12,11 @@
 	</section>
 	<section name="GenerateConstructorUsingFieldsSelectionDialog">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		<item key="OmitCallToSuper" value="true"/>
+=======
+		<item key="OmitCallToSuper" value="false"/>
+>>>>>>> Stashed changes
 =======
 		<item key="OmitCallToSuper" value="false"/>
 >>>>>>> Stashed changes
@@ -62,7 +66,10 @@
 		<item key="VisibilityModifier" value="1"/>
 		<item key="FinalModifier" value="false"/>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		<item key="InsertPosition.v2" value="2"/>
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 	</section>
