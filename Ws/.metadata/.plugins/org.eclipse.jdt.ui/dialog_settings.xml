@@ -11,7 +11,11 @@
 		<item key="renameGetter" value="true"/>
 	</section>
 	<section name="GenerateConstructorUsingFieldsSelectionDialog">
+<<<<<<< Updated upstream
 		<item key="OmitCallToSuper" value="true"/>
+=======
+		<item key="OmitCallToSuper" value="false"/>
+>>>>>>> Stashed changes
 	</section>
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
 		<item key="layout" value="2"/>
@@ -57,7 +61,10 @@
 		<item key="Comments" value="false"/>
 		<item key="VisibilityModifier" value="1"/>
 		<item key="FinalModifier" value="false"/>
+<<<<<<< Updated upstream
 		<item key="InsertPosition.v2" value="2"/>
+=======
+>>>>>>> Stashed changes
 	</section>
 	<section name="DialogBounds_GetterSetterTreeSelectionDialog">
 		<item key="DIALOG_WIDTH" value="526"/>

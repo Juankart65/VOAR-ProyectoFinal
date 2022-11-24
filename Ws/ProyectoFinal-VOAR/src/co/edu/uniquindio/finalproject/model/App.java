@@ -29,26 +29,17 @@ public class App {
 		this.salesPersonList = salesPersonList;
 		this.administrator = administrator;
 		this.userAct = userAct;
-		
-		inicializarDatos();
-		
 	}
-	
-	
-	
-	private void inicializarDatos() {
-		
+
+	public void inicializarDatos() {
+
 		SalesPerson salesPerson = new SalesPerson();
 		salesPerson.setName("juan");
 		salesPerson.setLastname("juan ramirez");
 		salesPerson.setIdCard("1005091937");
-		salesPersonList.add(salesPerson);
-		
-		
-		
 		User user = new User("1234", "juan");
 		salesPerson.setUser(user);
-		
+		salesPersonList.add(salesPerson);
 	}
 
 	/**
@@ -59,6 +50,7 @@ public class App {
 	public App(String name) {
 		super();
 		this.name = name;
+		inicializarDatos();
 	}
 
 	/**
@@ -91,8 +83,7 @@ public class App {
 	/**
 	 * Set salesPersonList
 	 *
-	 * @param salesPersonList
-	 *            the salesPersonList to set
+	 * @param salesPersonList the salesPersonList to set
 	 */
 	public void setSalesPersonList(ArrayList<SalesPerson> salesPersonList) {
 		this.salesPersonList = salesPersonList;
@@ -110,8 +101,7 @@ public class App {
 	/**
 	 * Set administrator
 	 *
-	 * @param administrator
-	 *            the administrator to set
+	 * @param administrator the administrator to set
 	 */
 	public void setAdministrator(Administrator administrator) {
 		this.administrator = administrator;
@@ -129,8 +119,7 @@ public class App {
 	/**
 	 * Set userAct
 	 *
-	 * @param userAct
-	 *            the userAct to set
+	 * @param userAct the userAct to set
 	 */
 	public void setUserAct(SalesPerson userAct) {
 		this.userAct = userAct;
@@ -259,18 +248,17 @@ public class App {
 
 		return message;
 	}
-	
+
 	public boolean verificarUsuario(String usuario, String contrasenia) {
 
 		for (SalesPerson salesPerson : salesPersonList) {
-			if(salesPerson.verificarUsuario(usuario,contrasenia)){
+			if (salesPerson.verificarUsuario(usuario, contrasenia)) {
 				return true;
 			}
 		}
 		return false;
 	}
-	
-	
-	
+
+
 
 }

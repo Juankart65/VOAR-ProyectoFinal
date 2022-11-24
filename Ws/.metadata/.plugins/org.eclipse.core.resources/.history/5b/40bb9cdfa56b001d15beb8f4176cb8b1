@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="572.0" prefWidth="727.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.finalproject.controllers.VentanaPrincipalController">
+   <children>
+      <TabPane prefHeight="200.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab fx:id="b" text="Home">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="543.0" prefWidth="727.0">
+                           <children>
+                              <Button fx:id="btnBuscarProducto" layoutX="471.0" layoutY="141.0" mnemonicParsing="false" onAction="#BuscarEvent" text="Buscar" />
+                              <Label layoutX="67.0" layoutY="23.0" prefHeight="55.0" prefWidth="497.0" text="Bienvenido a V.O.A.R" textFill="#284561">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <TableView layoutX="169.0" layoutY="272.0" prefHeight="172.0" prefWidth="389.0">
+                                <columns>
+                                  <TableColumn prefWidth="75.0" text="C1" />
+                                  <TableColumn prefWidth="75.0" text="C2" />
+                                </columns>
+                              </TableView>
+                              <TextField layoutX="364.0" layoutY="97.0" prefHeight="24.0" prefWidth="295.0" />
+                              <ImageView fitHeight="31.0" fitWidth="33.0" layoutX="324.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../../../../../../../../Downloads/WhatsApp%20Image%202022-11-21%20at%206.32.05%20PM.jpeg" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="169.0" layoutY="228.0" text="Productos">
+                                 <font>
+                                    <Font name="Cambria Bold Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="364.0" layoutY="64.0" prefHeight="29.0" prefWidth="133.0" text="Buscar Producto" textFill="#284561">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="tabFriendRequest" text="Amigos">
+               <content>
+                  <AnchorPane prefHeight="543.0" prefWidth="608.0">
+                     <children>
+                        <Label layoutX="32.0" layoutY="6.0" prefHeight="25.0" prefWidth="117.0" text="Amigos">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="80.0" layoutY="46.0" prefHeight="25.0" prefWidth="380.0" promptText="search people" />
+                        <Separator layoutY="33.0" prefHeight="3.0" prefWidth="616.0" />
+                        <TableView fx:id="tableEncontrado" layoutX="134.0" layoutY="117.0" prefHeight="54.0" prefWidth="349.0">
+                           <columns>
+                              <TableColumn prefWidth="75.0" text="nombre" />
+                              <TableColumn prefWidth="75.0" text="cedula" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="16.0" layoutY="202.0" prefHeight="28.0" prefWidth="161.0" text="Lista de amigos">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="tableListaAmigos" layoutX="134.0" layoutY="260.0" prefHeight="192.0" prefWidth="349.0">
+                           <columns>
+                              <TableColumn prefWidth="75.0" text="nombre" />
+                              <TableColumn prefWidth="75.0" text="cedula" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="BtnAgregarAmigo" layoutX="228.0" layoutY="481.0" mnemonicParsing="false" text="Agregar" />
+                        <Button fx:id="BtnEliminnarAmigo" layoutX="332.0" layoutY="481.0" mnemonicParsing="false" text="Eliminar" />
+                        <Separator layoutX="-17.0" layoutY="202.0" prefHeight="3.0" prefWidth="629.0" />
+                        <ImageView fx:id="lupita" fitHeight="43.0" fitWidth="33.0" layoutX="40.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../../../../../../../Downloads/icone-loupe-noir.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </content></Tab>
+            <Tab fx:id="tabOther" text="Mensajes">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label graphicTextGap="0.0" layoutX="22.0" layoutY="23.0" text="Chats">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="BtnEliminnarAmigo1" layoutX="271.0" layoutY="419.0" mnemonicParsing="false" text="Abrir" />
+                        <Separator layoutY="57.0" prefHeight="3.0" prefWidth="629.0" />
+                        <ImageView fx:id="lupita1" fitHeight="43.0" fitWidth="33.0" layoutX="34.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../../../../../../../Downloads/icone-loupe-noir.png" />
+                           </image>
+                        </ImageView>
+                        <TextField layoutX="81.0" layoutY="80.0" prefHeight="25.0" prefWidth="380.0" promptText="search people" />
+                        <TableView fx:id="tableListaAmigos1" layoutX="102.0" layoutY="162.0" prefHeight="219.0" prefWidth="381.0">
+                           <columns>
+                              <TableColumn prefWidth="75.0" text="nombre" />
+                              <TableColumn prefWidth="75.0" text="cedula" />
+                           </columns>
+                        </TableView>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+          <Tab fx:id="tabPost" text="Feed">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="543.0" prefWidth="600.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="545.0" prefWidth="651.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="545.0" prefWidth="634.0" VBox.vgrow="ALWAYS">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <children>
+                                    <ScrollPane fx:id="scroll" prefHeight="545.0" prefWidth="651.0" styleClass="transparent" stylesheets="@../styles/Styles.css">
+                                       <content>
+                                          <GridPane fx:id="grid" prefHeight="0.0" prefWidth="31.0">
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                                             </rowConstraints>
+                                          </GridPane>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="tabPost1" text="Wall">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ScrollPane layoutX="6.0" layoutY="6.0" prefHeight="538.0" prefWidth="600.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="536.0" prefWidth="600.0">
+                                 <children>
+                                    <Label fx:id="txtNameProfile" layoutX="83.0" layoutY="100.0">
+                                       <font>
+                                          <Font name="System Italic" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="txtApellidoProfile" layoutX="317.0" layoutY="100.0">
+                                       <font>
+                                          <Font name="System Italic" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <GridPane fx:id="grdPostUser" layoutY="192.0" prefHeight="329.0" prefWidth="584.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

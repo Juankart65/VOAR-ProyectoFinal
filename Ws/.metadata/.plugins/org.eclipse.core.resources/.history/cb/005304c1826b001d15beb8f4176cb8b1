@@ -1,0 +1,45 @@
+/**
+ * This class belongs to the package co.edu.uniquindio.finalproject.controllers
+ */
+package co.edu.uniquindio.finalproject.controllers;
+
+import java.awt.Label;
+
+import co.edu.uniquindio.finalproject.model.Product;
+import javafx.fxml.FXML;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
+/**
+ * This class represents to
+ *
+ * @author Juanes Cardona
+ */
+public class ItemController {
+
+    @FXML
+    private ImageView imgShow;
+
+    @FXML
+    private Label txtNombreProducto;
+
+    @FXML
+    private Label txtPrecio;
+
+	
+	private Product product;
+	
+	public void setData(Product producto) {
+		this.product = producto;
+		
+		txtNombreProducto.setText(producto.getName());
+		txtPrecio.setText(producto.getPrice());
+		
+		Image imagen = new Image(getClass().getResourceAsStream(producto.getImg()));
+		imgShow.setImage(imagen);
+		
+	}
+
+	
+	  
+}

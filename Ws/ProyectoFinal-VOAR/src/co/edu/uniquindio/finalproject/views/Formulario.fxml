@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.finalproject.controllers.FormularioController">
    <children>
       <Label layoutX="96.0" layoutY="60.0" prefHeight="27.0" prefWidth="68.0" text="Nombre:">
@@ -50,6 +49,6 @@
          </font>
       </Label>
       <TextField fx:id="txtContrasenia" alignment="CENTER" layoutX="194.0" layoutY="292.0" prefHeight="27.0" prefWidth="211.0" promptText="Ingrese una contraseña" />
-      <Button fx:id="bntRegistrarUsuario" layoutX="194.0" layoutY="376.0" mnemonicParsing="false" onAction="#registrarAction" prefHeight="35.0" prefWidth="136.0" text="Registrar Usuario" />
+      <Button fx:id="bntRegistrarUsuario" layoutX="194.0" layoutY="376.0" mnemonicParsing="false" onAction="#registrarEvent" prefHeight="35.0" prefWidth="136.0" text="Registrar Usuario" />
    </children>
 </AnchorPane>

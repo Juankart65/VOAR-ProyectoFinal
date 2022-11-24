@@ -21,108 +21,99 @@ import javafx.scene.control.TextField;
  * @author Juanes Cardona
  */
 public class InicioSesionController {
-	
 
+	@FXML
+	private ResourceBundle resources;
 
-	    @FXML
-	    private ResourceBundle resources;
+	@FXML
+	private URL location;
 
-	    @FXML
-	    private URL location;
+	@FXML
+	private Button btnIniciarSesion;
 
-	    @FXML
-	    private Button btnIniciarSesion;
+	@FXML
+	private TextField txtUsuario;
 
-	    @FXML
-	    private TextField txtUsuario;
-	    
-	    @FXML
-	    private Button btnRegistrarse;
+	@FXML
+	private Button btnRegistrarse;
 
-	    @FXML
-	    private PasswordField txtContrasenia;
+	@FXML
+	private PasswordField txtContrasenia;
 
-	    
-		private Aplicacion aplicacion;
-		
-		
+	private Aplicacion aplicacion;
 
+	@FXML
+	void iniciarSesionEvent(ActionEvent event) {
+		iniciarSesionAction();
+	}
 
+	@FXML
+	void registrarseEvent(ActionEvent event) {
+		registrarseAction();
+	}
 
-	    @FXML
-	    void iniciarSesionEvent(ActionEvent event) {
-	    	iniciarSesionAction();
-	    }
-	    
-	    @FXML
-	    void registrarseEvent(ActionEvent event) {
-	    	registrarseAction();
-	    }
+	/**
+	 * 
+	 */
+	private void registrarseAction() {
+		aplicacion.mostrarVentanaRegistro();
 
-	    /**
-		 * 
-		 */
-		private void registrarseAction() {
-			aplicacion.mostrarVentanaRegistro();
-			
-		}
+	}
 
-		private void iniciarSesionAction() {
+	private void iniciarSesionAction() {
 
-	    	String usuario = "";
-	    	String contrasenia = "";
+		String usuario = "";
+		String contrasenia = "";
 
-	    	usuario = txtUsuario.getText();
-	    	contrasenia = txtContrasenia.getText();
+		usuario = txtUsuario.getText();
+		contrasenia = txtContrasenia.getText();
 
-	    	if(datosValidos(usuario,contrasenia)){
+		if (datosValidos(usuario, contrasenia)) {
 
-	    		boolean usuarioValido = aplicacion.verificarUsuario(usuario,contrasenia);
-	    		if(usuarioValido){
-	    			aplicacion.mostrarVentanaPrincipal();
-	    		}else{
-	    			mostrarMensaje("Notificaci�n Inicio sesion", "Usuario no existe", "Los datos ingresados no corresponde a un usuario valido", AlertType.INFORMATION);
+			boolean usuarioValido = aplicacion.verificarUsuario(usuario, contrasenia);
+			if (usuarioValido == true) {
+				aplicacion.mostrarVentanaPrincipal();
+			} else {
+				mostrarMensaje("Notificaci�n Inicio sesion", "Usuario no existe",
+						"Los datos ingresados no corresponde a un usuario valido", AlertType.INFORMATION);
 
-	    		}
-	    	}else{
-				mostrarMensaje("Notificaci�n Inicio sesion", "Datos Incompletos", "Debe ingresar los datos correctamente, despues de 3 intentos se bloqueara el usuario", AlertType.WARNING);
-
-	    	}
-
-		}
-	    
-	    
-	    public void mostrarMensaje(String titulo, String header, String contenido, AlertType alertType) {
-
-			Alert alert = new Alert(alertType);
-			alert.setTitle(titulo);
-			alert.setHeaderText(header);
-			alert.setContentText(contenido);
-			alert.showAndWait();
-		}
-	    
-	    
-	    
-		private boolean datosValidos(String usuario, String contrasenia) {
-			if(usuario.equals("") || contrasenia.equals("")){
-				return false;
 			}
-			return true;
+		} else {
+			mostrarMensaje("Notificaci�n Inicio sesion", "Datos Incompletos",
+					"Debe ingresar los datos correctamente, despues de 3 intentos se bloqueara el usuario",
+					AlertType.WARNING);
+
 		}
 
-		@FXML
-	    void initialize() {
+	}
 
-	    }
+	public void mostrarMensaje(String titulo, String header, String contenido, AlertType alertType) {
 
+		Alert alert = new Alert(alertType);
+		alert.setTitle(titulo);
+		alert.setHeaderText(header);
+		alert.setContentText(contenido);
+		alert.showAndWait();
+	}
 
+	private boolean datosValidos(String usuario, String contrasenia) {
+		if (usuario.equals("") || contrasenia.equals("")) {
+			return false;
+		}
+		return true;
+	}
 
-		/**
-		 * @param aplicacion2
-		 */
-		public void setAplicacion(Aplicacion aplicacion) {
+	@FXML
+	void initialize() {
+		
+	}
+
+	/**
+	 * @param aplicacion2
+	 */
+	public void setAplicacion(Aplicacion aplicacion) {
 		this.aplicacion = aplicacion;
-			
-		}
+
+	}
 
 }

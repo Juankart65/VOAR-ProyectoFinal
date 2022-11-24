@@ -2,6 +2,7 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="java.io.File"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<<<<<<< Updated upstream
     <fullyQualifiedTypeName name="org.junit.Before"/>
     <fullyQualifiedTypeName name="project.model.Application"/>
     <fullyQualifiedTypeName name="project.model.SalesPerson"/>
@@ -30,4 +31,8 @@
     <fullyQualifiedTypeName name="javafx.scene.control.Alert"/>
     <fullyQualifiedTypeName name="co.edu.uniquindio.finalproject.exceptions.PersonException"/>
     <fullyQualifiedTypeName name="java.lang.ClassCastException"/>
+=======
+    <fullyQualifiedTypeName name="project.exceptions.PostException"/>
+    <fullyQualifiedTypeName name="project.exceptions.PersonException"/>
+>>>>>>> Stashed changes
 </qualifiedTypeNameHistroy>

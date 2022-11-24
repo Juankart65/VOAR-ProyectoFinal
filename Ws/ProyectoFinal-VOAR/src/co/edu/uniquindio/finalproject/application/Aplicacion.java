@@ -1,10 +1,12 @@
 /**
- * This class belongs to the package co.edu.uniquindio.finalproject.application
+  * This class belongs to the package co.edu.uniquindio.finalproject.application
  */
 package co.edu.uniquindio.finalproject.application;
 
 import java.io.IOException;
 
+import co.edu.uniquindio.finalproject.controllers.CrearPostController;
+import co.edu.uniquindio.finalproject.controllers.FormularioController;
 import co.edu.uniquindio.finalproject.controllers.InicioSesionController;
 import co.edu.uniquindio.finalproject.controllers.VentanaPrincipalController;
 import co.edu.uniquindio.finalproject.model.App;
@@ -25,6 +27,8 @@ public class Aplicacion extends Application {
 	// Attribute Declaration
 	private Stage primaryStage;
 	App app = new App("V.O.A.R");
+	
+	public static final String CURRENCY = "$";
 
 	/*
 	 * (non-Javadoc)
@@ -35,10 +39,8 @@ public class Aplicacion extends Application {
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("V:O:A:R");
-		mostrarVentanaInicioSesion();
+		mostrarVentanaPrincipal();
 		
-		
-
 	}
 
 	public Stage getPrimaryStage() {
@@ -94,6 +96,51 @@ public class Aplicacion extends Application {
 		}
 	}
 
+	/**
+	 * 
+	 */
+	public void mostrarVentanaRegistro() {
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(Aplicacion.class.getResource("../views/Formulario.fxml"));
+
+			AnchorPane rootLayout = (AnchorPane)loader.load();
+
+			FormularioController formularioController = loader.getController();
+			formularioController.setAplicacion(this);
+
+			Scene scene = new Scene(rootLayout);
+			primaryStage.setScene(scene);
+			primaryStage.show();
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * 
+	 */
+	public void mostrarVentanaCrearPublicacion() {
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(Aplicacion.class.getResource("../views/CrearPost.fxml"));
+
+			AnchorPane rootLayout = (AnchorPane)loader.load();
+
+			CrearPostController crearPostController = loader.getController();
+			crearPostController.setAplicacion(this);
+
+			Scene scene = new Scene(rootLayout);
+			primaryStage.setScene(scene);
+			primaryStage.show();
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 	public static void main(String[] args) {
 		launch(args);
@@ -113,28 +160,19 @@ public class Aplicacion extends Application {
 		
 	}
 
+
 	/**
-	 * 
+	 * @param newSalesperson
 	 */
-	public void mostrarVentanaRegistro() {
-		try {
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Aplicacion.class.getResource("../views/Formulario.fxml"));
-
-			AnchorPane rootLayout = (AnchorPane)loader.load();
-
-			InicioSesionController inicioSesionController = loader.getController();
-			inicioSesionController.setAplicacion(this);
-
-			Scene scene = new Scene(rootLayout);
-			primaryStage.setScene(scene);
-			primaryStage.show();
-			
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public void addSalesPerson(SalesPerson newSalesperson) {
+		app.getSalesPersonList().add(newSalesperson);
 	}
 
-
+	/**
+	 * @param salesPerson
+	 * @return
+	 */
+	public SalesPerson createSalesPerson(SalesPerson salesPerson) {
+		return app.createSalesPerson(salesPerson);
+	}
 }

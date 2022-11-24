@@ -1,0 +1,154 @@
+/**
+ * This class belongs to the package co.edu.uniquindio.finalproject.controllers
+ */
+package co.edu.uniquindio.finalproject.controllers;
+
+/**
+ * This class represents to
+ *
+ * @author Juanes Cardona
+ */
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import co.edu.uniquindio.finalproject.application.Aplicacion;
+import co.edu.uniquindio.finalproject.model.App;
+import co.edu.uniquindio.finalproject.model.SalesPerson;
+import co.edu.uniquindio.finalproject.model.User;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+
+public class FormularioController {
+
+	private Aplicacion aplicacion;
+	@FXML
+	private ResourceBundle resources;
+
+	@FXML
+	private URL location;
+
+	@FXML
+	private Button bntRegistrarUsuario;
+
+	@FXML
+	private TextField txtApellido;
+
+	@FXML
+	private TextField txtCedula;
+
+	@FXML
+	private TextField txtContrasenia;
+
+	@FXML
+	private TextField txtDireccion;
+
+	@FXML
+	private TextField txtNombre;
+
+	@FXML
+	private TextField txtUsuario;
+
+	@FXML
+	void registrarEvent(ActionEvent event) {
+		crearRegistroEvent();
+
+	}
+
+	private App app;
+
+	/**
+	 * 
+	 */
+	private void crearRegistroEvent() {
+
+		// 1. Capturar los datos de los campos de texto
+		String nombre = txtNombre.getText();
+		String apellido = txtApellido.getText();
+		String documento = txtCedula.getText();
+		String direccion = txtDireccion.getText();
+		String nombreUsuario = txtUsuario.getText();
+		String contrasenia = txtContrasenia.getText();
+
+		User usuario = new User(nombreUsuario, contrasenia);
+
+		// 2. Validar la informaci�n
+		if (datosValidos(nombre, apellido, documento, usuario) == true) {
+
+			// 3. Registrar el cliente
+			SalesPerson salesPerson = new SalesPerson(nombre, apellido, documento, direccion, usuario);
+
+			try {
+				SalesPerson newSalesperson = app.createSalesPerson(salesPerson);
+				app.getSalesPersonList().add(newSalesperson);
+
+				mostrarMensaje("Notificaci�n Estudiante", "Estudiante registrado",
+						"El Estudiante se ha registrado con �xtio", AlertType.INFORMATION);
+
+			} catch (ClassCastException e) {
+				mostrarMensaje("Notificaci�n Estudiante", "Estudiante no registrado",
+						"El Estudiante con docuemnto " + documento + " ya se encuentra registrado", AlertType.ERROR);
+
+			}
+
+		} else {
+			mostrarMensaje("Notificaci�n Estudiante", "Informacion invalida", "Informaicon invalida", AlertType.ERROR);
+
+		}
+	}
+
+	/**
+	 * @param nombre
+	 * @param apellido
+	 * @param documento
+	 * @param nombreUsuario
+	 * @param contrasenia
+	 * @return
+	 */
+	private boolean datosValidos(String nombre, String apellido, String documento, User user) {
+
+		if (nombre.equals("")) {
+			return false;
+		}
+		if (apellido.equals("")) {
+			return false;
+		}
+		if (documento.equals("")) {
+			return false;
+		}
+		if (user.getNombreUsuario().equals("")) {
+			return false;
+		}
+		if (user.getContrasenia().equals("")) {
+			return false;
+		}
+		return true;
+
+	}
+
+	public void mostrarMensaje(String titulo, String header, String contenido, AlertType alertType) {
+
+		Alert alert = new Alert(alertType);
+		alert.setTitle(titulo);
+		alert.setHeaderText(header);
+		alert.setContentText(contenido);
+		alert.showAndWait();
+	}
+
+	@FXML
+	void initialize() {
+
+	}
+
+	/**
+	 * @param aplicacion
+	 */
+	public void setAplicacion(Aplicacion aplicacion) {
+		this.aplicacion = aplicacion;
+
+	}
+
+}

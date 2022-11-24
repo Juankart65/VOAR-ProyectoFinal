@@ -29,7 +29,7 @@ public class SalesPerson extends Person implements FriendRequest {
 	 * @param direccion
 	 */
 	public SalesPerson(String nombre, String apellidos, String cedula, String direccion,  User user) {
-		super(direccion, direccion, direccion, direccion, direccion);
+		super(direccion, nombre, apellidos, cedula, direccion);
 		this.user = user;
 	}
 

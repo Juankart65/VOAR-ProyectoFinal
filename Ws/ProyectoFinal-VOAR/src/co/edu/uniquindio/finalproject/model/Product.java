@@ -2,6 +2,8 @@ package co.edu.uniquindio.finalproject.model;
 
 import java.io.File;
 
+import javafx.scene.image.Image;
+
 /**
  * This class represents a Product
  *
@@ -16,8 +18,8 @@ public class Product {
 
 	private String name;
 	private String code;
-	private File img;
-	private double price;
+	private String img;
+	private String price;
 	private ProductCategory category;
 	private ProductStatus status;
 
@@ -31,7 +33,7 @@ public class Product {
 	 * @param category
 	 * @param status
 	 */
-	public Product(String name, String code, File img, double price, ProductCategory category, ProductStatus status) {
+	public Product(String name, String code, String img, String price, ProductCategory category, ProductStatus status) {
 		super();
 		this.name = name;
 		this.code = code;
@@ -39,6 +41,13 @@ public class Product {
 		this.price = price;
 		this.category = category;
 		this.status = status;
+	}
+
+	/**
+	 * 
+	 */
+	public Product() {
+		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -82,7 +91,7 @@ public class Product {
 	 *
 	 * @return
 	 */
-	public File getImg() {
+	public String getImg() {
 		return img;
 	}
 
@@ -91,7 +100,7 @@ public class Product {
 	 *
 	 * @param img
 	 */
-	public void setImg(File img) {
+	public void setImg(String img) {
 		this.img = img;
 	}
 
@@ -100,7 +109,7 @@ public class Product {
 	 *
 	 * @return
 	 */
-	public double getPrice() {
+	public String getPrice() {
 		return price;
 	}
 
@@ -109,7 +118,7 @@ public class Product {
 	 *
 	 * @param price
 	 */
-	public void setPrice(double price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
 

@@ -11,8 +11,7 @@ package co.edu.uniquindio.finalproject.controllers;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import co.edu.uniquindio.finalproject.exceptions.PersonException;
-import co.edu.uniquindio.finalproject.exceptions.SaleException;
+import co.edu.uniquindio.finalproject.application.Aplicacion;
 import co.edu.uniquindio.finalproject.model.App;
 import co.edu.uniquindio.finalproject.model.SalesPerson;
 import co.edu.uniquindio.finalproject.model.User;
@@ -25,80 +24,82 @@ import javafx.scene.control.TextField;
 
 public class FormularioController {
 
-    @FXML
-    private ResourceBundle resources;
+	private Aplicacion aplicacion;
+	@FXML
+	private ResourceBundle resources;
 
-    @FXML
-    private URL location;
+	@FXML
+	private URL location;
 
-    @FXML
-    private Button bntRegistrarUsuario;
+	@FXML
+	private Button bntRegistrarUsuario;
 
-    @FXML
-    private TextField txtApellido;
+	@FXML
+	private TextField txtApellido;
 
-    @FXML
-    private TextField txtCedula;
+	@FXML
+	private TextField txtCedula;
 
-    @FXML
-    private TextField txtContrasenia;
+	@FXML
+	private TextField txtContrasenia;
 
-    @FXML
-    private TextField txtDireccion;
+	@FXML
+	private TextField txtDireccion;
 
-    @FXML
-    private TextField txtNombre;
+	@FXML
+	private TextField txtNombre;
 
-    @FXML
-    private TextField txtUsuario;
+	@FXML
+	private TextField txtUsuario;
 
-    @FXML
-    void registrarAction(ActionEvent event)  {
-    	crearRegistroEvent();
+	@FXML
+	void registrarEvent(ActionEvent event) {
+		crearRegistroEvent();
 
-    }
-    
-    App app;
+	}
 
-    /**
+	/**
 	 * 
 	 */
-	private void crearRegistroEvent(){
-		
-		//1. Capturar los datos de los campos de texto
-				String nombre = txtNombre.getText();
-				String apellido = txtApellido.getText();
-				String documento = txtCedula.getText();
-				String nombreUsuario = txtUsuario.getText();
-				String contrasenia = txtContrasenia.getText();
+	private void crearRegistroEvent() {
 
-				User usuario = new User(nombreUsuario, contrasenia);
+		// 1. Capturar los datos de los campos de texto
+		String nombre = txtNombre.getText();
+		String apellido = txtApellido.getText();
+		String documento = txtCedula.getText();
+		String direccion = txtDireccion.getText();
+		String nombreUsuario = txtUsuario.getText();
+		String contrasenia = txtContrasenia.getText();
 
-				//2. Validar la informaci�n
-				if(datosValidos(nombre, apellido, documento,nombreUsuario,contrasenia) == true){
+		User usuario = new User(nombreUsuario, contrasenia);
 
-					//3. Registrar el cliente
-					SalesPerson salesPerson = null;
+		// 2. Validar la informaci�n
+		if (datosValidos(nombre, apellido, documento, usuario) == true) {
 
-					try {
-						salesPerson = app.createSalesPerson(salesPerson);
-						app.getSalesPersonList().add(salesPerson);
+			// 3. Registrar el cliente
+			SalesPerson salesPerson = new SalesPerson(nombre, apellido, documento, direccion, usuario);
 
-						mostrarMensaje("Notificaci�n Estudiante", "Estudiante registrado", "El Estudiante se ha registrado con �xtio", AlertType.INFORMATION);
+			try {
+				SalesPerson newSalesperson = aplicacion.createSalesPerson(salesPerson);
+				aplicacion.addSalesPerson(newSalesperson);
+				
+				aplicacion.mostrarVentanaInicioSesion();
 
-					} catch (ClassCastException e) {
-						mostrarMensaje("Notificaci�n Estudiante", "Estudiante no registrado", "El Estudiante con docuemnto "+documento+" ya se encuentra registrado", AlertType.ERROR);
+				mostrarMensaje("Notificaci�n Estudiante", "Estudiante registrado",
+						"El Estudiante se ha registrado con �xtio", AlertType.INFORMATION);
 
+			} catch (ClassCastException e) {
+				mostrarMensaje("Notificaci�n Estudiante", "Estudiante no registrado",
+						"El Estudiante con docuemnto " + documento + " ya se encuentra registrado", AlertType.ERROR);
 
-					}
+			}
 
+		} else {
+			mostrarMensaje("Notificaci�n Estudiante", "Informacion invalida", "Informaicon invalida", AlertType.ERROR);
 
-				}
-				else{
-					mostrarMensaje("Notificaci�n Estudiante", "Informacion invalida", "Informaicon invalida", AlertType.ERROR);
+		}
+	}
 
-				}			}
-		
 	/**
 	 * @param nombre
 	 * @param apellido
@@ -107,28 +108,27 @@ public class FormularioController {
 	 * @param contrasenia
 	 * @return
 	 */
-	private boolean datosValidos(String nombre, String apellido, String documento, String nombreUsuario,
-			String contrasenia) {
-		
-		if(nombre.equals("")){
+	private boolean datosValidos(String nombre, String apellido, String documento, User user) {
+
+		if (nombre.equals("")) {
 			return false;
 		}
-		if(apellido.equals("")){
+		if (apellido.equals("")) {
 			return false;
 		}
-		if(documento.equals("")){
+		if (documento.equals("")) {
 			return false;
 		}
-		if(nombreUsuario.equals("")){
+		if (user.getNombreUsuario().equals("")) {
 			return false;
 		}
-		if(contrasenia.equals("")){
+		if (user.getContrasenia().equals("")) {
 			return false;
 		}
 		return true;
-		
+
 	}
-	
+
 	public void mostrarMensaje(String titulo, String header, String contenido, AlertType alertType) {
 
 		Alert alert = new Alert(alertType);
@@ -138,13 +138,17 @@ public class FormularioController {
 		alert.showAndWait();
 	}
 
-
-
 	@FXML
-    void initialize() {
-        
-    }	
-    
-	
+	void initialize() {
+
+	}
+
+	/**
+	 * @param aplicacion
+	 */
+	public void setAplicacion(Aplicacion aplicacion) {
+		this.aplicacion = aplicacion;
+
+	}
 
 }
