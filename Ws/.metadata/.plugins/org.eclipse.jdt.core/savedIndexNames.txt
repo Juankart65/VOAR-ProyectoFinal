@@ -1,6 +1,0 @@
-INDEX VERSION 1.129+C:\Users\Hewlett Packard\eclipse-workspace\ProyectoFinal\Ws\.metadata\.plugins\org.eclipse.jdt.core
-3995237016.index
-3968569714.index
-1893439535.index
-4124335317.index
-3111727962.index
