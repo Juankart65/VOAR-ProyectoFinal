@@ -2,7 +2,6 @@ INDEX VERSION 1.131+C:\Users\trej2\OneDrive\Documentos\GitHub\ProyectoFinal\Ws\.
 3469051978.index
 812042358.index
 2405777025.index
-3968569714.index
 868221269.index
 1831737020.index
 2232998472.index
@@ -10,12 +9,7 @@ INDEX VERSION 1.131+C:\Users\trej2\OneDrive\Documentos\GitHub\ProyectoFinal\Ws\.
 2802586840.index
 3270977647.index
 2998230385.index
+944741381.index
 465262108.index
 1612637039.index
-1865797976.index
-<<<<<<< Updated upstream
 2087909018.index
-=======
-944741381.index
-2532141338.index
->>>>>>> Stashed changes
